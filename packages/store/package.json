@@ -1,0 +1,19 @@
+{
+  "name": "@transparansi/store",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "fauzialhari@gmail.com",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "babel-node --root-mode upward index.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "apollo-cache-inmemory": "^1.6.3",
+    "apollo-client": "^2.6.4",
+    "apollo-link-http": "^1.5.16",
+    "redux": "^4.0.4"
+  },
+  "devDependencies": {}
+}

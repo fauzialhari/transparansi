@@ -1,0 +1,16 @@
+{
+  "name": "@transparansi/web-landing",
+  "version": "1.0.0",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rimraf dist && tsc"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.12.0"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.0"
+  }
+}
