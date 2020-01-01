@@ -6,7 +6,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "babel-node --root-mode upward index.js",
+    "start": "babel --root-mode upward index.js",
     "test": "jest"
   },
   "dependencies": {
