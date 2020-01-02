@@ -1,7 +1,7 @@
 import React from 'react';
 import { ApolloProvider, useQuery } from '@apollo/react-hooks';
 import client from '@transparansi/store';
-import { Landing } from '@transparansi/web-landing';
+import { Landing } from '@transparansi/web-landing/dist/pages';
 import gql from 'graphql-tag';
 import logo from './logo.svg';
 import './App.css';
