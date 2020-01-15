@@ -19,6 +19,7 @@
     "react-dom": "^16.12.0"
   },
   "dependencies": {
-    "@transparansi/dom-components": "1.0.0"
+    "@transparansi/dom-components": "1.0.0",
+    "@transparansi/store": "1.0.0"
   }
 }

@@ -3,19 +3,17 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Landing = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _typography = _interopRequireDefault(require("@transparansi/dom-components/dist/data-display/typography"));
+var _Landing = _interopRequireDefault(require("./Landing"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var Landing = function Landing() {
-  return _react["default"].createElement("div", null, _react["default"].createElement(_typography["default"], {
-    variant: 'h1',
-    color: 'primary'
-  }, "this is kings landing hahahih"));
+  return _react["default"].createElement(_Landing["default"], null);
 };
 
-exports.Landing = Landing;
+var _default = Landing;
+exports["default"] = _default;

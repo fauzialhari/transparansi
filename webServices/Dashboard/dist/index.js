@@ -11,6 +11,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _reactRouterDom = require("react-router-dom");
 
+var _auth = require("@transparansi/store/dist/modules/auth");
+
 var _webOrganizationManagement = _interopRequireDefault(require("@transparansi/web-organization-management"));
 
 var _default2 = _interopRequireDefault(require("@transparansi/dom-components/dist/default"));
@@ -53,36 +55,49 @@ var Dasboard = function Dasboard() {
       isMobileMenuOpen = _useState2[0],
       setMobileMenu = _useState2[1];
 
-  return _react["default"].createElement(_reactRouterDom.BrowserRouter, null, _react["default"].createElement(_reactRouterDom.Route, {
-    path: "/dashboard"
-  }, _react["default"].createElement(_default2["default"], null, _react["default"].createElement("section", {
-    className: 'Dasboard'
-  }, _react["default"].createElement(_appBar["default"], {
-    position: "sticky"
-  }, _react["default"].createElement(_Toolbar["default"], null, _react["default"].createElement(_Hidden["default"], {
-    smUp: true
-  }, _react["default"].createElement(_IconButton["default"], {
-    color: "inherit",
-    onClick: function onClick() {
-      return setMobileMenu(!isMobileMenuOpen);
-    }
-  }, _react["default"].createElement(_Menu["default"], null))), "Dasboard")), _react["default"].createElement(_drawer["default"], {
-    isMobileMenuOpen: isMobileMenuOpen,
-    onCloseMobileMenu: function onCloseMobileMenu() {
-      return setMobileMenu(false);
-    }
-  }, "Dashboard"), _react["default"].createElement(_main["default"], null, _react["default"].createElement(_reactRouterDom.Switch, null, _react["default"].createElement(_reactRouterDom.Route, {
-    exact: true,
-    path: "/dashboard",
-    component: _home["default"]
-  }), _react["default"].createElement(_reactRouterDom.Route, {
-    path: "/dashboard/organization",
-    component: _webOrganizationManagement["default"]
-  }), _react["default"].createElement(_reactRouterDom.Route, {
-    component: function component() {
-      return _react["default"].createElement("div", null, "Look's like you are get lost in Dashboard, Do you need help?");
-    }
-  })))))));
+  var _useAuth = (0, _auth.useAuth)(),
+      isLogin = _useAuth.state.isLogin;
+
+  return (// <Router>
+    _react["default"].createElement("div", null, _react["default"].createElement(_reactRouterDom.Route, {
+      path: "/dashboard"
+    }, isLogin ? _react["default"].createElement(_default2["default"], null, _react["default"].createElement("section", {
+      className: 'Dasboard'
+    }, _react["default"].createElement(_appBar["default"], {
+      position: "sticky"
+    }, _react["default"].createElement(_Toolbar["default"], null, _react["default"].createElement(_Hidden["default"], {
+      smUp: true
+    }, _react["default"].createElement(_IconButton["default"], {
+      color: "inherit",
+      onClick: function onClick() {
+        return setMobileMenu(!isMobileMenuOpen);
+      }
+    }, _react["default"].createElement(_Menu["default"], null))), "Dasboard")), _react["default"].createElement(_drawer["default"], {
+      isMobileMenuOpen: isMobileMenuOpen,
+      onCloseMobileMenu: function onCloseMobileMenu() {
+        return setMobileMenu(false);
+      }
+    }, "Dashboard"), _react["default"].createElement(_main["default"], null, _react["default"].createElement(_reactRouterDom.Switch, null, _react["default"].createElement(_reactRouterDom.Route, {
+      exact: true,
+      path: "/dashboard",
+      component: _home["default"]
+    }), _react["default"].createElement(_reactRouterDom.Route, {
+      path: "/dashboard/organization",
+      component: _webOrganizationManagement["default"]
+    }), _react["default"].createElement(_reactRouterDom.Route, {
+      component: function component() {
+        return _react["default"].createElement("div", null, "Look's like you are get lost in Dashboard, Do you need help?");
+      }
+    }))))) : _react["default"].createElement(_reactRouterDom.Redirect, {
+      to: {
+        pathname: '/',
+        state: {
+          from: '/dashboard'
+        }
+      }
+    }))) // </Router>
+
+  );
 };
 
 var _default = Dasboard;

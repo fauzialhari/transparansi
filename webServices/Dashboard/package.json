@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@transparansi/dom-components": "1.0.0",
+    "@transparansi/store": "1.0.0",
     "@transparansi/web-organization-management": "*"
   }
 }

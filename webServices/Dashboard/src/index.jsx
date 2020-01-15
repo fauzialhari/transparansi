@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
+import { useAuth } from '@transparansi/store/dist/modules/auth';
 import Organization from '@transparansi/web-organization-management';
 import DefaultThemeProvider from '@transparansi/dom-components/dist/default';
 import AppBar from '@transparansi/dom-components/dist/surfaces/appBar';
@@ -17,42 +18,57 @@ import Hidden from '@material-ui/core/Hidden';
 import Home from './pages/home';
 const Dasboard = () => {
   const [isMobileMenuOpen, setMobileMenu] = useState(true);
+  const {
+    state: { isLogin },
+  } = useAuth();
+
   return (
-    <Router>
+    // <Router>
+    <div>
       <Route path="/dashboard">
-        <DefaultThemeProvider>
-          <section className={'Dasboard'}>
-            <AppBar position="sticky">
-              <Toolbar>
-                <Hidden smUp>
-                  <IconButton color="inherit" onClick={() => setMobileMenu(!isMobileMenuOpen)}>
-                    <MenuIcon></MenuIcon>
-                  </IconButton>
-                </Hidden>
-                Dasboard
-              </Toolbar>
-            </AppBar>
-            <Drawer
-              isMobileMenuOpen={isMobileMenuOpen}
-              onCloseMobileMenu={() => setMobileMenu(false)}
-            >
-              Dashboard
-            </Drawer>
-            <Main>
-              <Switch>
-                <Route exact path="/dashboard" component={Home}></Route>
-                <Route path="/dashboard/organization" component={Organization}></Route>
-                <Route
-                  component={() => (
-                    <div>Look's like you are get lost in Dashboard, Do you need help?</div>
-                  )}
-                ></Route>
-              </Switch>
-            </Main>
-          </section>
-        </DefaultThemeProvider>
+        {isLogin ? (
+          <DefaultThemeProvider>
+            <section className={'Dasboard'}>
+              <AppBar position="sticky">
+                <Toolbar>
+                  <Hidden smUp>
+                    <IconButton color="inherit" onClick={() => setMobileMenu(!isMobileMenuOpen)}>
+                      <MenuIcon></MenuIcon>
+                    </IconButton>
+                  </Hidden>
+                  Dasboard
+                </Toolbar>
+              </AppBar>
+              <Drawer
+                isMobileMenuOpen={isMobileMenuOpen}
+                onCloseMobileMenu={() => setMobileMenu(false)}
+              >
+                Dashboard
+              </Drawer>
+              <Main>
+                <Switch>
+                  <Route exact path="/dashboard" component={Home}></Route>
+                  <Route path="/dashboard/organization" component={Organization}></Route>
+                  <Route
+                    component={() => (
+                      <div>Look's like you are get lost in Dashboard, Do you need help?</div>
+                    )}
+                  ></Route>
+                </Switch>
+              </Main>
+            </section>
+          </DefaultThemeProvider>
+        ) : (
+          <Redirect
+            to={{
+              pathname: '/',
+              state: { from: '/dashboard' },
+            }}
+          />
+        )}
       </Route>
-    </Router>
+    </div>
+    // </Router>
   );
 };
 
