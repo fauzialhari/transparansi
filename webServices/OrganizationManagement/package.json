@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@transparansi/dom-components": "1.0.0",
+    "@transparansi/store": "1.0.0",
     "@transparansi/web-dashboard": "1.0.0"
   }
 }
