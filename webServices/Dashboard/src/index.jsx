@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
-import { useAuth } from '@transparansi/store/dist/modules/auth';
+import { useAuth } from '@transparansi/store/dist/modules/Auth';
 import Organization from '@transparansi/web-organization-management';
 import DefaultThemeProvider from '@transparansi/dom-components/dist/default';
 import AppBar from '@transparansi/dom-components/dist/surfaces/appBar';

@@ -11,7 +11,7 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _reactRouterDom = require("react-router-dom");
 
-var _auth = require("@transparansi/store/dist/modules/auth");
+var _Auth = require("@transparansi/store/dist/modules/Auth");
 
 var _webOrganizationManagement = _interopRequireDefault(require("@transparansi/web-organization-management"));
 
@@ -55,7 +55,7 @@ var Dasboard = function Dasboard() {
       isMobileMenuOpen = _useState2[0],
       setMobileMenu = _useState2[1];
 
-  var _useAuth = (0, _auth.useAuth)(),
+  var _useAuth = (0, _Auth.useAuth)(),
       isLogin = _useAuth.state.isLogin;
 
   return (// <Router>

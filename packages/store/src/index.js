@@ -1,7 +1,6 @@
 import { ApolloClient } from 'apollo-client';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { HttpLink } from 'apollo-link-http';
-import { typeDefs, resolvers } from './modules/user';
 
 const cache = new InMemoryCache();
 const link = new HttpLink({
@@ -11,14 +10,6 @@ const link = new HttpLink({
 const client = new ApolloClient({
   cache,
   link,
-  typeDefs,
-  resolvers,
-});
-
-cache.writeData({
-  data: {
-    allUsers: true,
-  },
 });
 
 export default client;

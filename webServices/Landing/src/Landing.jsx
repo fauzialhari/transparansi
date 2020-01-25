@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route, useRouteMatch, useHistory } from 'react-router-dom';
 
-import { useAuth } from '@transparansi/store/dist/modules/auth';
+import { useAuth } from '@transparansi/store/dist/modules/Auth';
 
 const Landing = () => {
   let { path } = useRouteMatch();
