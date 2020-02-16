@@ -23,7 +23,7 @@ var _drawer = _interopRequireDefault(require("@transparansi/dom-components/dist/
 
 var _main = _interopRequireDefault(require("@transparansi/dom-components/dist/surfaces/main"));
 
-var _typography = _interopRequireDefault(require("@transparansi/dom-components/dist/data-display/typography"));
+var _breadcrumbs = _interopRequireDefault(require("@transparansi/dom-components/dist/surfaces/breadcrumbs"));
 
 var _Toolbar = _interopRequireDefault(require("@material-ui/core/Toolbar"));
 
@@ -77,7 +77,7 @@ var Dasboard = function Dasboard() {
       onCloseMobileMenu: function onCloseMobileMenu() {
         return setMobileMenu(false);
       }
-    }, "Dashboard"), _react["default"].createElement(_main["default"], null, _react["default"].createElement(_reactRouterDom.Switch, null, _react["default"].createElement(_reactRouterDom.Route, {
+    }, "Dashboard"), _react["default"].createElement(_main["default"], null, _react["default"].createElement(_breadcrumbs["default"], null), _react["default"].createElement(_reactRouterDom.Switch, null, _react["default"].createElement(_reactRouterDom.Route, {
       exact: true,
       path: "/dashboard",
       component: _home["default"]

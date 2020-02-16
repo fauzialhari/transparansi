@@ -47,7 +47,7 @@ export const useOrganizationsDispatcher = (type = 'QUERY_ALL_ORGANIZATIONS') => 
       onCompleted = data =>
         dispatch({
           type,
-          payload: data,
+          payload: data.allOrganizations,
         });
       break;
 

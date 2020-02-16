@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 import { useAuth } from '@transparansi/store/dist/modules/Auth';
 import Organization from '@transparansi/web-organization-management';
@@ -8,7 +8,7 @@ import DefaultThemeProvider from '@transparansi/dom-components/dist/default';
 import AppBar from '@transparansi/dom-components/dist/surfaces/appBar';
 import Drawer from '@transparansi/dom-components/dist/navigation/drawer';
 import Main from '@transparansi/dom-components/dist/surfaces/main';
-import Typography from '@transparansi/dom-components/dist/data-display/typography';
+import Breadcrumbs from '@transparansi/dom-components/dist/surfaces/breadcrumbs';
 
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -46,6 +46,7 @@ const Dasboard = () => {
                 Dashboard
               </Drawer>
               <Main>
+                <Breadcrumbs />
                 <Switch>
                   <Route exact path="/dashboard" component={Home}></Route>
                   <Route path="/dashboard/organization" component={Organization}></Route>

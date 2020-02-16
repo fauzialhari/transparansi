@@ -101,7 +101,7 @@ var useOrganizationsDispatcher = function useOrganizationsDispatcher() {
       onCompleted = function onCompleted(data) {
         return dispatch({
           type: type,
-          payload: data
+          payload: data.allOrganizations
         });
       };
 
