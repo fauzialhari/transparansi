@@ -1,0 +1,32 @@
+{
+  "name": "@transparansi/serverapp",
+  "version": "0.0.0",
+  "description": "Backend server for transparansi.org",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fauzialhari/transparansi.git"
+  },
+  "keywords": [
+    "mongodb",
+    "express",
+    "node"
+  ],
+  "author": "fauzialhari@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fauzialhari/transparansi/issues"
+  },
+  "homepage": "https://github.com/fauzialhari/transparansi#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.13",
+    "nodemon": "^2.0.15"
+  }
+}
